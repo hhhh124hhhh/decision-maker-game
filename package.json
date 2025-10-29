@@ -1,7 +1,26 @@
 {
-  "name": "react_repo",
-  "private": true,
-  "version": "0.0.0",
+  "name": "decision-maker-game",
+  "version": "1.0.0",
+  "description": "一款现代像素艺术风格的商业思维决策游戏",
+  "keywords": [
+    "game",
+    "strategy",
+    "react",
+    "typescript",
+    "pixel-art",
+    "business-simulation"
+  ],
+  "homepage": "https://github.com/hhhh124hhhh/decision-maker-game#readme",
+  "bugs": {
+    "url": "https://github.com/hhhh124hhhh/decision-maker-game/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hhhh124hhhh/decision-maker-game.git"
+  },
+  "author": "MiniMax Agent",
+  "license": "MIT",
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "pnpm install --prefer-offline && vite",
