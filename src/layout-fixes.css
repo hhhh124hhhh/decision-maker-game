@@ -1,0 +1,219 @@
+/* 布局修复样式 - 防止元素重叠 */
+
+/* 游戏容器布局改进 */
+.game-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 确保所有绝对定位元素不会超出容器边界 */
+.game-container * {
+  box-sizing: border-box;
+}
+
+/* 改进滚动区域 */
+.game-log-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-log-container .scroll-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  max-height: calc(100% - 60px); /* 留出标题和提示的空间 */
+}
+
+/* 策略区域布局改进 */
+.strategy-zone-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-zone-container .strategy-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 1.5rem 0;
+}
+
+/* 状态面板布局改进 */
+.status-panel {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.status-panel .panel-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 防止动画元素超出边界 */
+.animated-element {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 改进z-index层级 */
+.z-title { z-index: 20; }
+.z-buttons { z-index: 15; }
+.z-content { z-index: 10; }
+.z-background { z-index: 1; }
+
+/* 响应式布局改进 */
+@media (max-width: 1200px) {
+  .game-container {
+    width: 95vw;
+    height: 90vh;
+  }
+  
+  .status-panel {
+    width: 280px !important;
+  }
+  
+  .strategy-buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    width: 98vw;
+    height: 95vh;
+    padding: 0.5rem;
+  }
+  
+  .status-panel {
+    width: 240px !important;
+  }
+  
+  .strategy-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* 确保文本不会溢出 */
+.text-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* 改进动画性能 */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 滚动条样式改进 - 增强可见性 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(46, 29, 20, 0.9);
+  border: 1px solid rgba(50, 205, 50, 0.3);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(50, 205, 50, 0.8);
+  border: 1px solid rgba(50, 205, 50, 0.6);
+  border-radius: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(50, 205, 50, 1);
+  border: 1px solid rgba(50, 205, 50, 0.8);
+}
+
+/* 更明显的滚动条样式 */
+.custom-scrollbar-visible::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-scrollbar-visible::-webkit-scrollbar-track {
+  background: rgba(46, 29, 20, 0.95);
+  border: 2px solid rgba(50, 205, 50, 0.4);
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.custom-scrollbar-visible::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(50, 205, 50, 0.9), rgba(50, 205, 50, 0.7));
+  border: 2px solid rgba(50, 205, 50, 0.6);
+  border-radius: 0;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.custom-scrollbar-visible::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(50, 205, 50, 1), rgba(50, 205, 50, 0.9));
+  border: 2px solid rgba(50, 205, 50, 0.8);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* 水平滚动条样式 */
+.custom-scrollbar-horizontal::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+.custom-scrollbar-horizontal::-webkit-scrollbar-track {
+  background: rgba(46, 29, 20, 0.9);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.custom-scrollbar-horizontal::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.8);
+  border: 1px solid rgba(255, 215, 0, 0.6);
+  border-radius: 0;
+}
+
+.custom-scrollbar-horizontal::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 215, 0, 1);
+  border: 1px solid rgba(255, 215, 0, 0.8);
+}
+
+/* 滚动条角落 */
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: rgba(46, 29, 20, 0.8);
+}
+
+.custom-scrollbar-visible::-webkit-scrollbar-corner {
+  background: rgba(46, 29, 20, 0.95);
+}
+
+/* Firefox滚动条样式 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(50, 205, 50, 0.8) rgba(46, 29, 20, 0.9);
+}
+
+.custom-scrollbar-visible {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(50, 205, 50, 1) rgba(46, 29, 20, 0.95);
+}
+
+.custom-scrollbar-horizontal {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 215, 0, 0.8) rgba(46, 29, 20, 0.9);
+}

@@ -1,0 +1,128 @@
+/* 像素艺术风格全局样式 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Press Start 2P', 'Orbitron', monospace;
+  background-color: #000000;
+  color: #ffffff;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 禁用抗锯齿 */
+img, canvas, svg {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* 像素动画 */
+@keyframes pixel-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pixel-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes pixel-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+/* 滚动条样式（像素风格） */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666666;
+  border: 1px solid #333333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888888;
+}
+
+/* 选中文本样式 */
+::selection {
+  background: #FFD700;
+  color: #000000;
+}
+
+/* 焦点样式 */
+button:focus,
+input:focus {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* 减少动画支持 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 响应式设计 - 移除缩放，使用流式布局 */
+@media (max-width: 1200px) {
+  .App {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .App {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .App {
+    padding: 0.25rem;
+  }
+}
