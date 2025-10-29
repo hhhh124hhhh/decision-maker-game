@@ -85,7 +85,7 @@ export const GameLog: React.FC<GameLogProps> = ({ logs, className = '' }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "steps(12)" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               className="flex items-start group flex-shrink-0"
             >
               {/* 回合编号 */}

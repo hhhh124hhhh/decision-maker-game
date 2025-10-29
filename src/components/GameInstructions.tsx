@@ -26,7 +26,7 @@ export const GameInstructions: React.FC<GameInstructionsProps> = ({
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "steps(16)" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* 关闭按钮 */}

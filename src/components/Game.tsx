@@ -97,7 +97,7 @@ export const Game: React.FC = () => {
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.5, opacity: 0 }}
-                transition={{ duration: 0.5, ease: "steps(16)" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <h2 className="font-pixel-display text-6xl text-gold mb-4">
                   回合 {gameState.round}

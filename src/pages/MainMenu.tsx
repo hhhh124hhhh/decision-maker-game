@@ -198,7 +198,7 @@ export const MainMenu: React.FC = () => {
             transition={{ duration: 0.5, delay: 1.0 }}
           >
             <p className="font-pixel-body text-xs text-gray-light">
-              版本 1.0.0 | 像素艺术风格 | MiniMax Agent 制作
+              版本 1.0.0 | 像素艺术风格 | hhhh124hhhh 制作
             </p>
           </motion.div>
         </div>

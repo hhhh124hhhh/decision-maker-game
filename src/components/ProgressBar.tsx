@@ -58,7 +58,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           animate={{ width: `${percentage}%` }}
           transition={{ 
             duration: 0.8, 
-            ease: "steps(16)",
+            ease: "easeInOut",
             type: "spring",
             stiffness: 100
           }}

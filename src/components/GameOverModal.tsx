@@ -151,7 +151,7 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.5, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "steps(16)" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {/* 结果标题 */}
             <div className="text-center mb-6 md:mb-8">
